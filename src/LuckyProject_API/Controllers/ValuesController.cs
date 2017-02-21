@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using LuckyProject_API.DataAccess;
+using LuckyProject_API.Entities;
 
 namespace LuckyProject_API.Controllers
 {
@@ -11,9 +13,19 @@ namespace LuckyProject_API.Controllers
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IList<Utilisateur> Get()
         {
-            return new string[] { "value1", "value2" };
+            Base_testContext ctx = null;
+            try
+            {
+                ctx = new Base_testContext();
+                return ctx.Utilisateur.ToList();
+            }
+            finally
+            {
+                ctx.Dispose();
+            }
+      
         }
 
         // GET api/values/5

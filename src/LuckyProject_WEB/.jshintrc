@@ -1,0 +1,13 @@
+{
+	"node": true,
+	"ignoreDelimiters" : [
+		{ "start": "start-non-standard", "end": "end-non-standard" }
+	],
+	"jasmine":true,
+	"esnext": true,
+	"globals" : {
+		"angular":true,
+		"inject":true,
+		"jest":true
+	}
+}

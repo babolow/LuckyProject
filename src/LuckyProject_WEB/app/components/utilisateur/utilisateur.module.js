@@ -1,6 +1,6 @@
-﻿import { userComponent } from './user.component';
+﻿import { userComponent } from './utilisateur.component';
 //import './app-header.scss';
 
 export const appUser = angular
-    .module('components.user', [])
+    .module('components.utilisateur', [])
     .component('appUser', userComponent).name;

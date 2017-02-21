@@ -6,8 +6,8 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>305deccd-a0ff-4d92-8b59-de51133232f4</ProjectGuid>
-    <RootNamespace>LuckyProject</RootNamespace>
+    <ProjectGuid>24e0d8ee-1e24-482e-8a4c-1ccb487b8bec</ProjectGuid>
+    <RootNamespace>LuckyProject_API</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>

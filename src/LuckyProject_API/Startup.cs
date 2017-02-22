@@ -29,23 +29,22 @@ namespace LuckyProject_API
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddApplicationInsightsTelemetry(Configuration);
+            //services.AddApplicationInsightsTelemetry(Configuration);
+
 
             // Cross domain requests
-           services.AddCors(options =>
-           {
+            services.AddCors(options =>
+            {
                // Define one or more CORS policies
                options.AddPolicy("AllowAll",
                     builder =>
                     {
                         builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                     });
-           });
+            });
+
 
             services.AddMvc();
-
-            
-
             // Gzip compression
             services.Configure<GzipCompressionProviderOptions>(options => options.Level = System.IO.Compression.CompressionLevel.Fastest);
             services.AddResponseCompression(options =>
@@ -58,16 +57,18 @@ namespace LuckyProject_API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+            loggerFactory.AddDebug(Microsoft.Extensions.Logging.LogLevel.Debug);
 
-            app.UseApplicationInsightsRequestTelemetry();
+            //app.UseApplicationInsightsRequestTelemetry();
 
-            app.UseApplicationInsightsExceptionTelemetry();
-
-            app.UseMvc();
+            //app.UseApplicationInsightsExceptionTelemetry();
 
             app.UseCors("AllowAll");
+
+            // IMPORTANT: Make sure UseCors() is called BEFORE this
+            app.UseMvc();
+
+       
         }
     }
 }

@@ -8,8 +8,7 @@ import { utilisateur } from './utilisateur/utilisateur.module';
 export const components = angular
     .module('components', [
        store,
-       product
-       //utilisateur
+       product,
        utilisateur
        // dashboard,
     ])

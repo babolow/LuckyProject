@@ -1,6 +1,22 @@
-﻿import { userComponent } from './utilisateur.component';
+﻿import { utilisateurComponent } from './utilisateur.component';
 //import './app-header.scss';
 
-export const appUser = angular
+export const utilisateur = angular
     .module('components.utilisateur', [])
-    .component('appUser', userComponent).name;
+    .component('utilisateur', utilisateurComponent)
+    .config(($stateProvider) => {
+        'ngInject';
+
+        $stateProvider
+            .state('utilisateur', {
+                // redirectTo: 'dashboard',
+                url: 'utilisateur',
+                parent: 'app',
+                //data: {
+                //    requiredAuth: true,
+                //},
+                component: 'utilisateur'
+                
+            });
+    })
+    .name;

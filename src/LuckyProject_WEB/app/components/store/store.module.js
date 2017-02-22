@@ -10,7 +10,7 @@ export const store = angular
         $stateProvider
             .state('store', {
                 // redirectTo: 'dashboard',
-                url: '/store',
+                url: 'store',
                 parent: 'app',
                 //data: {
                 //    requiredAuth: true,

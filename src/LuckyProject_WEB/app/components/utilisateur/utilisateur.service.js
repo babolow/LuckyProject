@@ -1,4 +1,4 @@
-﻿class UtilisateurService {
+﻿export class UtilisateurService {
     constructor($http, $q) {
         'ngInject';
 
@@ -18,4 +18,4 @@
     }
 }
 
-export default UtilisateurService;
+

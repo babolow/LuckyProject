@@ -1,8 +1,10 @@
 import { storeComponent } from './store.component';
+import { car } from './car/car.module';
+import { bike } from './bike/bike.module';
 //import './app-header.scss';
 
 export const store = angular
-    .module('components.store', [])
+    .module('components.store', [car, bike])
     .component('store', storeComponent)
     .config(($stateProvider) => {
         'ngInject';
@@ -10,7 +12,7 @@ export const store = angular
         $stateProvider
             .state('store', {
                 // redirectTo: 'dashboard',
-                url: '/store',
+                url: 'store',
                 parent: 'app',
                 //data: {
                 //    requiredAuth: true,

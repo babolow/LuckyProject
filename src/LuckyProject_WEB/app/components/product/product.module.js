@@ -1,21 +1,21 @@
-import { storeComponent } from './store.component';
+﻿import {  productComponent } from './product.component';
 //import './app-header.scss';
 
-export const store = angular
-    .module('components.store', [])
-    .component('store', storeComponent)
+export const product = angular
+    .module('product.store', [])
+    .component('product', productComponent)
     .config(($stateProvider) => {
         'ngInject';
 
         $stateProvider
-            .state('store', {
+            .state('product', {
                 // redirectTo: 'dashboard',
-                url: 'store',
+                url: 'product',
                 parent: 'app',
                 //data: {
                 //    requiredAuth: true,
                 //},
-                component: 'store'
+                component: 'product'
                 
             });
     })

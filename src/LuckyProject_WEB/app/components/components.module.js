@@ -1,11 +1,13 @@
 //import { auth } from './auth/auth.module';
 //import { dashboard } from './dashboard/dashboard.module';
 import { store } from './store/store.module';
+import { product } from './product/product.module';
 //import { utilisateur } from './utilisateur/utilisateur.module';
 
 export const components = angular
     .module('components', [
        store,
+       product
        //utilisateur
        // dashboard,
     ])

@@ -8,8 +8,8 @@ using LuckyProject_API.Entities;
 
 namespace LuckyProject_API.Controllers
 {
-    [Route("api/[controller]")]
-    public class ValuesController : Controller
+    [Route("api/utilisateur")]
+    public class UtilisateurController : Controller
     {
         // GET api/values
         [HttpGet]

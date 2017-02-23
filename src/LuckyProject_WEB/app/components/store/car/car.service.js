@@ -1,4 +1,4 @@
-﻿export class UtilisateurService {
+﻿export class CarService {
     constructor($http, $q) {
         'ngInject';
 
@@ -9,7 +9,7 @@
 
     getAll() {
         return this.$q((resolve, reject) => {
-            this.$http.get('http://localhost:20570/api/utilisateur')
+            this.$http.get('http://localhost:20570/api/car')
                 .then(
                     (response) => { resolve(response.data); },
                     (error) => { reject(error); }

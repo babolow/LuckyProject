@@ -1,9 +1,10 @@
 import { carComponent } from './car.component';
-//import './app-header.scss';
+import { CarService } from './car.service';
 
 export const car = angular
     .module('components.car', [])
     .component('car', carComponent)
+    .service('CarService', CarService)
     .config(($stateProvider) => {
         'ngInject';
 

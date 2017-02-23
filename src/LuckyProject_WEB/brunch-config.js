@@ -34,7 +34,6 @@ module.exports = {
             verbose: true, //shows each file that is copied to the destination directory 
             onlyChanged: true
         }
-      
     },
 
     npm: {

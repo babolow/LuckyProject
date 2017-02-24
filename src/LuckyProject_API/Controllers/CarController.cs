@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using LuckyProject_API.Entities;
+using Newtonsoft.Json;
 
 namespace LuckyProject_API.Controllers
 {
@@ -31,13 +32,35 @@ namespace LuckyProject_API.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            Base_testContext ctx = null;
+            try
+            {
+                ctx = new Base_testContext();
+                Car car = ctx.Car.Find(id);
+                return (car != null) ? car.Name : "404 : Car not found";
+            }
+            finally
+            {
+                ctx.Dispose();
+            }
         }
 
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)
         {
+            Car car = JsonConvert.DeserializeObject<Car>(value);
+            Base_testContext ctx = null;
+            try
+            {
+                ctx = new Base_testContext();
+                ctx.Add(car);
+                ctx.SaveChanges();
+            }
+            finally
+            {
+                ctx.Dispose();
+            }
         }
 
         // PUT api/values/5

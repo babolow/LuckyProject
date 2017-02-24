@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Formulaire d'edition de voiture</h2>
+
+    <form ng-submit="$ctrl.submitForm()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input class="form-control" id="name" placeholder="Name" ng-model="$ctrl.car.name">
+        </div>
+        <div class="form-group">
+            <label for="model">Model</label>
+            <input class="form-control" id="model" placeholder="Model" ng-model="$ctrl.car.model">
+        </div>
+        <div class="form-group">
+            <label for="name">Color</label>
+            <input class="form-control" id="color" placeholder="Color" ng-model="$ctrl.car.color">
+        </div>
+        <div class="form-group">
+            <label for="name">Date</label>
+            <input class="form-control" id="date" placeholder="Date" ng-model="$ctrl.car.date">
+        </div>
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </form>
+</div>
+
+<auth-form user="$ctrl.user"
+           message="{{ $ctrl.error }}"
+           button="Login"
+           on-submit="$ctrl.loginUser($event);">
+</auth-form>

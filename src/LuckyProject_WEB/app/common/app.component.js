@@ -4,7 +4,7 @@ class AppController {
     constructor($state) {
         'ngInject';
         this.$state = $state;
-        this.user = "Mathieu DECROOCQ"
+        this.user = "Mathieu DECROOCQ";
     }
     //logout() {
     //    return this.authService

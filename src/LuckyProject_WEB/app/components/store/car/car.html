@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Tableau voitures</h2>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Edit</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Model</th>
+            <th>Color</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat="car in $ctrl.carList">
+        <tr>
+            <td><button type="button" class="btn btn-info" ng-click="$ctrl.goToEditCar(car.id)">Editer</button></td>
+            <td>{{car.id}}</td>
+            <td>{{car.name}}</td>
+            <td>{{car.model}}</td>
+            <td>{{car.color}}</td>
+            <td>{{car.date}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" ng-click="$ctrl.goToAddCar()">Ajouter</button>
+</div>
+
+<!--<div ui-view></div>-->

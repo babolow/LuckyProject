@@ -1,5 +1,10 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import uiGrid from 'angular-ui-grid';
+//import { uiGridResizeColumns } from 'ui.grid.resizeColumns';
+//import { uiGridMoveColumns } from 'ui.grid.moveColumns';
+//import { uiGridPagination } from 'ui.grid.pagination';
+
 
 import { rootComponent } from './root.component';
 //import { common } from './common/common.module';
@@ -14,9 +19,14 @@ export const root = angular
     .module('root', [
 
         //npm modules
-        'templates',
-       //add module template for use html view compiled into one module by brunch (see $templateCache in angularjs doc)
+        'templates', //add module template for use html view compiled into one module by brunch (see $templateCache in angularjs doc)
         uiRouter,
+        uiGrid,
+        'ui.grid.resizeColumns',
+        'ui.grid.moveColumns',
+        'ui.grid.pagination',
+        'ui.grid.autoResize',
+
 
         //apps modules
         app,

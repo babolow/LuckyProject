@@ -1,15 +1,23 @@
 import './car.html';
 
 class CarController {
-    constructor(CarService) {
+    constructor(CarService, $state) {
         'ngInject';
-
+        this.$state = $state;
         this.CarService = CarService;
     }
 
     $onInit() {
         this.carList = [];
         this.CarService.getAll().then(response => this.carList = response);
+    }
+
+    goToAddCar() {
+        this.$state.go('editForm');
+    }
+
+    goToEditCar() {
+        this.$state.go('editForm', { 'id': id });
     }
 };
 

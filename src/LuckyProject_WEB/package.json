@@ -10,12 +10,13 @@
     "publish-for-iis": "npm run build-production && dotnet publish -c Release"
   },
   "devDependencies": {
-    "brunch": "^2.10.6",
+    "brunch": "^2.10.8",
     "clean-css-brunch": "^2.0.0",
     "sass-brunch": "^2.9.0",
     "uglify-js-brunch": "^2.0.1",
     "angularjs-templates-brunch": "^1.0.0",
     "babel-brunch": "^6.0.6",
+    "copycat-brunch": "^1.1.0",
     "js-string-escape": "^1.0.1",
 
     "babel-plugin-angularjs-annotate": "^0.7.0",
@@ -32,6 +33,7 @@
   "dependencies": {
     "angular": "^1.6.2",
     "angular-ui-router": "1.0.0-rc.1",
+    "jquery": ">= 1.9.0",
     "bootstrap": "^3.3.7",
     "angular-ui-grid": "4.0.2"
   },

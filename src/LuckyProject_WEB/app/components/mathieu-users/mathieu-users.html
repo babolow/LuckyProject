@@ -1,0 +1,29 @@
+﻿<div style="margin-top:50px">
+    <h1>Mathieu User Grid</h1>
+    <div>
+        <div class="grid" id="usersGrid" ui-grid="$ctrl.userGridOptions" ui-grid-pagination></div>
+
+        <div>
+            <button class="btn btn-primary" translate="yes" ng-click="$ctrl.goToAddUser()" style="margin-bottom: 20px;margin-top: 20px;float: left;">New</button>
+
+            <nav style="text-align: right">
+                <ul class="pagination">
+                    <li ng-class="{disabled : $ctrl.gridApi.pagination.getPage() == 1}">
+                        <a href="#" aria-label="Previous" ng-click="$ctrl.gridApi.pagination.previousPage()">
+                            <span aria-hidden="true" translate="yes">Previous</span>
+                        </a>
+                    </li>
+                    <li ng-class="{ active: $ctrl.gridApi.pagination.getPage() == n }" ng-repeat="n in range($ctrl.gridApi.pagination.getPage(), $ctrl.gridApi.pagination.getTotalPages())">
+                        <a ng-click="$ctrl.gridApi.pagination.seek(n)">{{n}} <span ng-if="$last && hasMorePage">...</span></a>
+                    </li>
+                    <li ng-class="{disabled : $ctrl.gridApi.pagination.getPage() == $ctrl.gridApi.pagination.getTotalPages()}">
+                        <a href="#" aria-label="Next" ng-click="$ctrl.gridApi.pagination.nextPage()">
+                            <span aria-hidden="true" translate="yes">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</div>

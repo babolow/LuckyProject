@@ -2,13 +2,13 @@ module.exports = {
     files: {
         javascripts: {
             joinTo: {
-                'vendor.js': /^(?!app)/,
+                'vendor.js': /^node_modules/,
                 'app.js': /^app/
             }
         },
         stylesheets: {
             joinTo: {
-                'vendor.css': /^(?!app)/,
+                'vendor.css': /^node_modules/,
                 'app.css': /^app/
             }
         }
@@ -27,14 +27,19 @@ module.exports = {
                 "transform-object-rest-spread",
                 "transform-decorators-legacy"
             ]
+        },
+        copycat: {
+            "fonts": ["node_modules/bootstrap/fonts", "node_modules/angular-ui-grid/ui-grid.eot",
+                "node_modules/angular-ui-grid/ui-grid.svg", "node_modules/angular-ui-grid/ui-grid.ttf", "node_modules/angular-ui-grid/ui-grid.woff"],
+            verbose: true, //shows each file that is copied to the destination directory 
+            onlyChanged: true
         }
-      
     },
 
     npm: {
-        styles: { bootstrap: ['dist/css/bootstrap.min.css'] },
+        styles: { bootstrap: ['dist/css/bootstrap.css'] , "angular-ui-grid": ['ui-grid.css']},
         static: ['node_modules/bootstrap/dist/js/bootstrap.min.js'],
-        globals: { bootstrap: 'bootstrap' }
+        globals: { angular: 'angular', $: 'jquery', jQuery: 'jquery' } // force this element to required in vendor.js
     },
     paths: {
         public: "wwwroot"

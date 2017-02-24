@@ -1,4 +1,4 @@
-﻿export class UtilisateurService {
+﻿export class UtilisateurEditService {
     constructor($http, $q) {
         'ngInject';
 
@@ -17,6 +17,3 @@
         });
     }
 }
-
-
-

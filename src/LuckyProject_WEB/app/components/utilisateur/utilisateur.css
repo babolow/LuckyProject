@@ -2,3 +2,19 @@
   width: 500px;
   height: 250px;
 }
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 5px solid #dddddd;
+    text-align: left;
+    padding: 12px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

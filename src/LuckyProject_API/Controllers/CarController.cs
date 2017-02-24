@@ -7,25 +7,25 @@ using LuckyProject_API.Entities;
 
 namespace LuckyProject_API.Controllers
 {
-    [Route("api/utilisateur")]
-    public class UtilisateurController : Controller
+    [Route("api/car")]
+    public class CarController : Controller
     {
-        /*// GET api/values
+        // GET api/values
         [HttpGet]
-        public IList<Utilisateur> Get()
+        public IList<Car> Get()
         {
             Base_testContext ctx = null;
             try
             {
                 ctx = new Base_testContext();
-                return ctx.Utilisateur.ToList();
+                return ctx.Car.ToList();
             }
             finally
             {
                 ctx.Dispose();
             }
       
-        }*/
+        }
 
         // GET api/values/5
         [HttpGet("{id}")]

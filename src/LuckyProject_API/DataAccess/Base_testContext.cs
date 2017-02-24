@@ -1,13 +1,14 @@
 ﻿using System;
-using LuckyProject_API.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using LuckyProject_API.Entities;
 
 namespace LuckyProject_API
 {
     public partial class Base_testContext : DbContext
     {
         public virtual DbSet<Car> Car { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Utilisateur> Utilisateur { get; set; }
 
         // Unable to generate entity type for table 'dbo.Table_test'. Please see the warning messages.
@@ -29,6 +30,17 @@ namespace LuckyProject_API
                 entity.Property(e => e.Model).HasColumnType("varchar(50)");
 
                 entity.Property(e => e.Name).HasColumnType("varchar(50)");
+            });
+
+            modelBuilder.Entity<Product>(entity =>
+            {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.Property(e => e.Libelle).HasMaxLength(50);
+
+                entity.Property(e => e.Prix).HasColumnType("numeric");
+
+                entity.Property(e => e.Quantite).HasColumnType("numeric");
             });
 
             modelBuilder.Entity<Utilisateur>(entity =>

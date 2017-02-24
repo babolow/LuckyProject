@@ -1,2 +1,18 @@
 ﻿<br /><br /><br /><br />
-<p>Mon produit</p>
+<h1>Produits</h1>
+<div>
+    <table>
+        <tr>
+            <th>Libelle</th>
+            <th>prix</th>
+            <th>quantite</th>
+            <th>Ajout</th>
+        </tr>
+        <tr ng-repeat="product in $ctrl.productList">
+            <td>{{product.libelle}}</td>
+            <td>{{product.prix}}</td>
+            <td>{{product.quantite}}</td>
+            <td><button ng-click="addProduct()">Ajouter produit</button></td>
+        </tr>
+    </table>
+</div>

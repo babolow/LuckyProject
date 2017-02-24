@@ -1,9 +1,11 @@
-﻿import {  productComponent } from './product.component';
+﻿import { productComponent } from './product.component';
+import { ProductService } from './product.service';
 //import './app-header.scss';
 
 export const product = angular
-    .module('product.store', [])
-    .component('product', productComponent)
+    .module('component.product', [])
+    .component('productComponent', productComponent)
+    .service('ProductService', ProductService)
     .config(($stateProvider) => {
         'ngInject';
 
@@ -15,8 +17,7 @@ export const product = angular
                 //data: {
                 //    requiredAuth: true,
                 //},
-                component: 'product'
-                
+                component: 'productComponent'
             });
     })
     .name;

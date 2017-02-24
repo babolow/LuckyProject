@@ -11,14 +11,9 @@ export const store = angular
 
         $stateProvider
             .state('store', {
-                // redirectTo: 'dashboard',
                 url: 'store',
                 parent: 'app',
-                //data: {
-                //    requiredAuth: true,
-                //},
                 component: 'store'
-                
             });
     })
     .name;

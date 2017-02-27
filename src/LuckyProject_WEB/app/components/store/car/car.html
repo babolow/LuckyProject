@@ -14,7 +14,10 @@
         </thead>
         <tbody ng-repeat="car in $ctrl.carList">
         <tr>
-            <td><button type="button" class="btn btn-info" ng-click="$ctrl.goToEditCar(car.id)">Editer</button></td>
+            <td>
+                <button type="button" class="btn btn-info" ng-click="$ctrl.goToEditCar(car.id)">Editer</button>
+                <button type="button" class="btn btn-danger" ng-click="$ctrl.deleteCar(car.id)">Supprimer</button>
+            </td>
             <td>{{car.id}}</td>
             <td>{{car.name}}</td>
             <td>{{car.model}}</td>

@@ -19,6 +19,10 @@ class CarController {
     goToEditCar() {
         this.$state.go('editForm', { 'id': id });
     }
+
+    deleteCar(id) {
+        this.CarService.deleteById(id).then(this.$state.reload());
+    }
 };
 
 export const carComponent = {

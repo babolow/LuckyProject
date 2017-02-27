@@ -18,7 +18,17 @@
 
     post(car) {
         return this.$q((resolve, reject) => {
-            this.$http.post('http://localhost:20570/api/car/', JSON.stringify(car))
+            this.$http.post('http://localhost:20570/api/car/', car)
+                .then(
+                    (response) => { resolve(response.data); },
+                    (error) => { reject(error); }
+                );
+        });
+    }
+
+    deleteById(id) {
+        return this.$q((resolve, reject) => {
+            this.$http.delete('http://localhost:20570/api/car/' + id)
                 .then(
                     (response) => { resolve(response.data); },
                     (error) => { reject(error); }

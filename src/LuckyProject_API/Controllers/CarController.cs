@@ -36,8 +36,11 @@ namespace LuckyProject_API.Controllers
             try
             {
                 ctx = new Base_testContext();
-                Car car = ctx.Car.Find(id);
-                return (car != null) ? car.Name : "404 : Car not found";
+                Car car = ctx.Car.ToList().FirstOrDefault(a => a.Id == id);
+                return car.Name;
+
+                //Car car = ctx.Car.Find(id);
+                //return (car != null) ? car.Name : "404 : Car not found";
             }
             finally
             {
@@ -47,9 +50,8 @@ namespace LuckyProject_API.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Car car)
         {
-            Car car = JsonConvert.DeserializeObject<Car>(value);
             Base_testContext ctx = null;
             try
             {
@@ -70,9 +72,21 @@ namespace LuckyProject_API.Controllers
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
+        [HttpDelete, Route("{id:int}")]
         public void Delete(int id)
         {
+            Base_testContext ctx = null;
+            try
+            {
+                ctx = new Base_testContext();
+                Car car = ctx.Car.ToList().FirstOrDefault(a => a.Id == id);
+                ctx.Remove(car);
+                ctx.SaveChanges();
+            }
+            finally
+            {
+                ctx.Dispose();
+            }
         }
     }
 }

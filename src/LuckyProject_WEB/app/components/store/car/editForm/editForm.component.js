@@ -23,8 +23,7 @@ class EditFormController {
     }
 
     submitForm() {
-        this.CarService.post(this.car);
-        this.$state.go('car');
+        this.CarService.post(this.car).then(this.$state.go('car'));
     }
 };
 

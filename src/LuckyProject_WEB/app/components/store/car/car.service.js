@@ -6,6 +6,16 @@
         this.$q = $q;
     }
 
+    getById(id) {
+        return this.$q((resolve, reject) => {
+            this.$http.get('http://localhost:20570/api/car/' + id)
+                .then(
+                    (response) => { resolve(response.data); },
+                    (error) => { reject(error); }
+                );
+        });
+    }
+
     getAll() {
         return this.$q((resolve, reject) => {
             this.$http.get('http://localhost:20570/api/car')

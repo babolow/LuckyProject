@@ -14,6 +14,10 @@ class EditFormController {
             color: '',
             date: ''
         };
+
+        if (this.carId !== 0) {
+            this.car = this.CarService.getById(this.carId);
+        } 
     }
 
     $onChanges(changes) {

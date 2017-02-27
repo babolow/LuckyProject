@@ -29,15 +29,15 @@ namespace LuckyProject_API.Controllers
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet, Route("{id:int}")]
+        public Car Get(int id)
         {
             Base_testContext ctx = null;
             try
             {
                 ctx = new Base_testContext();
                 Car car = ctx.Car.ToList().FirstOrDefault(a => a.Id == id);
-                return car.Name;
+                return car;
 
                 //Car car = ctx.Car.Find(id);
                 //return (car != null) ? car.Name : "404 : Car not found";

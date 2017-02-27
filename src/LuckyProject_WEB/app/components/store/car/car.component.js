@@ -16,7 +16,7 @@ class CarController {
         this.$state.go('editForm');
     }
 
-    goToEditCar() {
+    goToEditCar(id) {
         this.$state.go('editForm', { 'id': id });
     }
 
@@ -27,7 +27,8 @@ class CarController {
 
 export const carComponent = {
     bindings: {
-        carList: '<'
+        carList: '<',
+        id: '<'
     },
     templateUrl : 'app/components/store/car/car.html',
     controller: CarController

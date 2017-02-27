@@ -12,7 +12,14 @@ export const editForm = angular
             .state('editForm', {
                 url: '/car/editForm',
                 parent: 'store',
-                component: 'editForm'
+                component: 'editForm',
+                resolve: {
+                    carId: [
+                        '$stateParams', function($stateParams) {
+                            return $stateParams.id ? $stateParams.id : 0;
+                        }
+                    ]
+                }
             });
     })
     .name;

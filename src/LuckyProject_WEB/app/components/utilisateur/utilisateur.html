@@ -1,3 +1,30 @@
 ﻿<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<h1>Utilisateursaaaaa</h1>
-<div class="grid" id="utilisateurGrid" ui-grid="utilisateurGridOptions" ui-grid-pagination></div>
+<h1>Utilisateurs</h1>
+<!--<div class="grid" id="utilisateurGrid" ui-grid="utilisateurGridOptions" ui-grid-pagination></div>-->
+
+<div class="container">
+    <table class = "table">
+        <thead>
+            <tr>
+                <td>Nom</td>
+                <td>Prenom</td>
+                <td>Ville</td>
+                <td>Age</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="user in $ctrl.userList">
+                <td>{{user.nom}}</td>
+                <td>{{user.prenom}}</td>
+                <td>{{user.ville}}</td>
+                <td>{{user.age}}</td>
+                <td align='center'><button type ="button" class="btn btn-primary" ng-click="$ctrl.onEdit()">Modifier</button></td>
+                <td align='center'><button type ="button" class="btn btn-danger" ng-click="$ctrl.onDelete">Supprimer</button></td>
+            </tr>
+            <tr>
+                <td align='center'><button type ="button" class="btn btn-success" ng-click="$ctrl.onAdd()">Ajouter</button></td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
